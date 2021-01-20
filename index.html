@@ -1,109 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
     <style>
-		html, head
-	  	{
-        height: 100%;
-        margin:0;
-        background-position:center;
-        background-repeat: no-repeat;
-        background-size: cover;
+	html, head{
+		height: 100%;
+		margin:0;
+		background-position:center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		text-align: center;
 		font-family: sans-serif;
 		font-weight: 100;
-		}
+	}
 
-		h1{
-		  color: #396;
-		  font-weight: 100;
-		  font-size: 40px;
-		  margin: 40px 0px 20px;
-		}
+	.large{
+		text-align: center;
+		color: #F2F4F8;
+		-webkit-font-smoothing: antialiased;
+		box-sizing: inherit;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		display: block;
+		text-transform: uppercase;
+		font-family: "MercuryMedium",serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 84px;
+		letter-spacing: 8px;
+	}
 
-		#clockdiv{
-			font-family: sans-serif;
-			color: #fff;
-			display: inline-block;
-			font-weight: 100;
-			text-align: center;
-			font-size: 30px;
-		}
+	.small{
+		text-align: center;
+		color: #F2F4F8;
+		-webkit-font-smoothing: antialiased;
+		box-sizing: inherit;
+		margin: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		display: block;
+		text-transform: uppercase;
+		font-family: "DecimalMed",sans-serif;
+		font-style: normal;
+		line-height: 10px;
+		font-size: 45px;
+		padding: 10px 0;
+	}
+    body{
+	--swiper-theme-color: #007aff;
+		--swiper-navigation-size: 44px;
+		color: #113E88;
+		-webkit-font-smoothing: antialiased;
+		box-sizing: inherit;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		background: url("./gradient-backblue.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-bottom: 95px;
+    }
 
-		#clockdiv > div{
-			padding: 10px;
-			border-radius: 3px;
-			background: #222222;
-			display: inline-block;
-		}
-
-		#clockdiv div > span{
-			padding: 15px;
-			border-radius: 3px;
-			background: #2051c5;
-			display: inline-block;
-		}
-
-		.smalltext{
-			padding-top: 5px;
-			font-size: 16px;
-			
-			
-		}
-		.large{
-				text-align: center;
-				color: #F2F4F8;
-				-webkit-font-smoothing: antialiased;
-				box-sizing: inherit;
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font: inherit;
-				vertical-align: baseline;
-				display: block;
-				text-transform: uppercase;
-				font-family: "MercuryMedium",serif;
-				font-style: normal;
-				font-weight: normal;
-				font-size: calc(24px);
-				letter-spacing: 8px;
-			}
-			
-			.small{
-				text-align: center;
-				color: #F2F4F8;
-				-webkit-font-smoothing: antialiased;
-				box-sizing: inherit;
-				margin: 0;
-				border: 0;
-				font: inherit;
-				vertical-align: baseline;
-				display: block;
-				text-transform: uppercase;
-				font-family: "DecimalMed",sans-serif;
-				font-style: normal;
-				line-height: 10px;
-				font-size: 15px;
-				padding: 10px 0;
-			}
-	    body{
-	    	--swiper-theme-color: #007aff;
-			--swiper-navigation-size: 44px;
-			color: #113E88;
-			-webkit-font-smoothing: antialiased;
-			box-sizing: inherit;
-			margin: 0;
-			padding: 0;
-			border: 0;
-			font-size: 100%;
-			font: inherit;
-			vertical-align: baseline;
-			background: url("./gradient-backblue.png");
-			background-size: 100% 100%;
-			background-repeat: no-repeat;
-			background-position: center;
-			padding-bottom: 95px;
-	    }
-	
 	
     </style>
 
@@ -131,73 +94,8 @@
 			<span class="large">A Presidency</span>
 			<span class="small">for</span>
 			<span class="large">All Americans</span>
-			<span class="small">begins in:</span>
+			<span class="small">has begun</span>
 			<br>
-			<span class="clockspan">
-				<div id='clockdiv'>
-					<div>
-					<span class="days"></span>
-					<div class="smalltext">Days</div>
-				</div>
-					<div>
-					<span class="hours"></span>
-					<div class="smalltext">Hours</div>
-				</div>
-					<div>
-					<span class="minutes"></span>
-					<div class="smalltext">Minutes</div>
-				</div>
-					<div>
-					<span class="seconds"></span>
-					<div class="smalltext">Seconds</div>
-				</div>
-			</span>
 	</span>
-
-
-	<script id="countdown" >
-		function getTimeRemaining(endtime) {
-			const total = Date.parse(endtime) - Date.parse(new Date());
-			const seconds = Math.floor(total / 1000 % 60);
-			const minutes = Math.floor(total / 1000 / 60 % 60);
-			const hours = Math.floor(total / (1000 * 60 * 60) % 24);
-			const days = Math.floor(total / (1000 * 60 * 60 * 24));
-
-			return {
-			total,
-			days,
-			hours,
-			minutes,
-			seconds };
-
-		}
-
-		function initializeClock(id, endtime) {
-			const clock = document.getElementById(id);
-			const daysSpan = clock.querySelector('.days');
-			const hoursSpan = clock.querySelector('.hours');
-			const minutesSpan = clock.querySelector('.minutes');
-			const secondsSpan = clock.querySelector('.seconds');
-
-			function updateClock() {
-			const t = getTimeRemaining(endtime);
-
-			daysSpan.innerHTML = t.days;
-			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-			if (t.total <= 0) {
-				clearInterval(timeinterval);
-			}
-			}
-
-			updateClock();
-			const timeinterval = setInterval(updateClock, 1000);
-		}
-
-		const deadline = new Date(Date.parse(new Date('Jan 20, 2021 12:00:00 GMT-0500')));
-		initializeClock('clockdiv', deadline);
-	</script>
 	</body>
 </html>
