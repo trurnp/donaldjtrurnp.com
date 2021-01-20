@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <style>
-      body, html, head{
+		html, head
+	  	{
         height: 100%;
         margin:0;
-        background-image: url('https://www.texomashomepage.com/wp-content/uploads/sites/41/2021/01/5a5130e13e284cec8e4b2ac36c2f8e53-1.jpg');
         background-position:center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -85,75 +85,85 @@
 				font-size: 15px;
 				padding: 10px 0;
 			}
-	}
+	    body{
+	    	--swiper-theme-color: #007aff;
+			--swiper-navigation-size: 44px;
+			color: #113E88;
+			-webkit-font-smoothing: antialiased;
+			box-sizing: inherit;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+			background: url("./gradient-backblue.png");
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			padding-bottom: 95px;
+	    }
+	
 	
     </style>
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGRM7YN9GL"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-DGRM7YN9GL');
-	</script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#006400" />
-    <title>Home | No Malarky!</title>
-    <meta name='keywords' content='' />
-    <meta name='description' content='remove trump to Keep America Great!' />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-</head>
-  <body>
-	  <span id='top'></span>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	<div id='biden'>
-	  <span class="large">A Presidency</span>
-	  <span class="small">for</span>
-	  <span class="large">All Americans</span>
-	  <span class="small">begins in:</span>
-	  <br>
-	</div>
-	<div id='clockdiv'>
-		<div>
-		<span class="days"></span>
-		<div class="smalltext">Days</div>
-	</div>
-		<div>
-		<span class="hours"></span>
-		<div class="smalltext">Hours</div>
-	</div>
-		<div>
-		<span class="minutes"></span>
-		<div class="smalltext">Minutes</div>
-	</div>
-		<div>
-		<span class="seconds"></span>
-		<div class="smalltext">Seconds</div>
-	</div>
-	</div>
-		<div >
-    </div>
-	
-	
-      <script id="countdown" >
-		function getTimeRemaining(endtime) {
-		  const total = Date.parse(endtime) - Date.parse(new Date());
-		  const seconds = Math.floor(total / 1000 % 60);
-		  const minutes = Math.floor(total / 1000 / 60 % 60);
-		  const hours = Math.floor(total / (1000 * 60 * 60) % 24);
-		  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGRM7YN9GL"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-DGRM7YN9GL');
+		</script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#006400" />
+		<title>Home | No Malarky!</title>
+		<meta name='keywords' content='' />
+		<meta name='description' content='remove trump to Keep America Great!' />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			
+	</head>
+	<body>
+		<span id='backblue'>
+			<br><br>
+			<span class="large">A Presidency</span>
+			<span class="small">for</span>
+			<span class="large">All Americans</span>
+			<span class="small">begins in:</span>
+			<br>
+			<span class="clockspan">
+				<div id='clockdiv'>
+					<div>
+					<span class="days"></span>
+					<div class="smalltext">Days</div>
+				</div>
+					<div>
+					<span class="hours"></span>
+					<div class="smalltext">Hours</div>
+				</div>
+					<div>
+					<span class="minutes"></span>
+					<div class="smalltext">Minutes</div>
+				</div>
+					<div>
+					<span class="seconds"></span>
+					<div class="smalltext">Seconds</div>
+				</div>
+			</span>
+	</span>
 
-		  return {
+
+	<script id="countdown" >
+		function getTimeRemaining(endtime) {
+			const total = Date.parse(endtime) - Date.parse(new Date());
+			const seconds = Math.floor(total / 1000 % 60);
+			const minutes = Math.floor(total / 1000 / 60 % 60);
+			const hours = Math.floor(total / (1000 * 60 * 60) % 24);
+			const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+			return {
 			total,
 			days,
 			hours,
@@ -163,13 +173,13 @@
 		}
 
 		function initializeClock(id, endtime) {
-		  const clock = document.getElementById(id);
-		  const daysSpan = clock.querySelector('.days');
-		  const hoursSpan = clock.querySelector('.hours');
-		  const minutesSpan = clock.querySelector('.minutes');
-		  const secondsSpan = clock.querySelector('.seconds');
+			const clock = document.getElementById(id);
+			const daysSpan = clock.querySelector('.days');
+			const hoursSpan = clock.querySelector('.hours');
+			const minutesSpan = clock.querySelector('.minutes');
+			const secondsSpan = clock.querySelector('.seconds');
 
-		  function updateClock() {
+			function updateClock() {
 			const t = getTimeRemaining(endtime);
 
 			daysSpan.innerHTML = t.days;
@@ -178,16 +188,16 @@
 			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
 			if (t.total <= 0) {
-			  clearInterval(timeinterval);
+				clearInterval(timeinterval);
 			}
-		  }
+			}
 
-		  updateClock();
-		  const timeinterval = setInterval(updateClock, 1000);
+			updateClock();
+			const timeinterval = setInterval(updateClock, 1000);
 		}
 
 		const deadline = new Date(Date.parse(new Date('Jan 20, 2021 12:00:00 GMT-0500')));
 		initializeClock('clockdiv', deadline);
-    </script>
-  </body>
+	</script>
+	</body>
 </html>
